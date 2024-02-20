@@ -1,0 +1,16 @@
+<.header>
+  Class <%= @class.id %>
+  <:subtitle>This is a class record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/class/#{@class}/edit"}>
+      <.button>Edit class</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Name"><%= @class.name %></:item>
+  <:item title="Description"><%= @class.description %></:item>
+</.list>
+
+<.back navigate={~p"/class"}>Back to class</.back>
