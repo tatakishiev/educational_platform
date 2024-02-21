@@ -22,6 +22,14 @@ defmodule EducationalPlatformWeb.Router do
 
     get "/", PageController, :home
     resources "/class", ClassController
+
+    live "/lesson", LessonsLive.Index, :index
+    live "/lesson/new", LessonsLive.Index, :new
+    live "/lesson/:id/edit", LessonsLive.Index, :edit
+
+    live "/lesson/:id", LessonsLive.Show, :show
+    live "/lesson/:id/show/edit", LessonsLive.Show, :edit
+
   end
 
   # Other scopes may use custom stacks.

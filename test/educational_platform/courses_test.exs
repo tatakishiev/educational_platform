@@ -114,4 +114,60 @@ defmodule EducationalPlatform.CoursesTest do
       assert %Ecto.Changeset{} = Courses.change_class(class)
     end
   end
+
+  describe "lesson" do
+    alias EducationalPlatform.Courses.Lessons
+
+    import EducationalPlatform.CoursesFixtures
+
+    @invalid_attrs %{name: nil, date: nil}
+
+    test "list_lesson/0 returns all lesson" do
+      lessons = lessons_fixture()
+      assert Courses.list_lesson() == [lessons]
+    end
+
+    test "get_lessons!/1 returns the lessons with given id" do
+      lessons = lessons_fixture()
+      assert Courses.get_lessons!(lessons.id) == lessons
+    end
+
+    test "create_lessons/1 with valid data creates a lessons" do
+      valid_attrs = %{name: "some name", date: ~D[2024-02-20]}
+
+      assert {:ok, %Lessons{} = lessons} = Courses.create_lessons(valid_attrs)
+      assert lessons.name == "some name"
+      assert lessons.date == ~D[2024-02-20]
+    end
+
+    test "create_lessons/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Courses.create_lessons(@invalid_attrs)
+    end
+
+    test "update_lessons/2 with valid data updates the lessons" do
+      lessons = lessons_fixture()
+      update_attrs = %{name: "some updated name", date: ~D[2024-02-21]}
+
+      assert {:ok, %Lessons{} = lessons} = Courses.update_lessons(lessons, update_attrs)
+      assert lessons.name == "some updated name"
+      assert lessons.date == ~D[2024-02-21]
+    end
+
+    test "update_lessons/2 with invalid data returns error changeset" do
+      lessons = lessons_fixture()
+      assert {:error, %Ecto.Changeset{}} = Courses.update_lessons(lessons, @invalid_attrs)
+      assert lessons == Courses.get_lessons!(lessons.id)
+    end
+
+    test "delete_lessons/1 deletes the lessons" do
+      lessons = lessons_fixture()
+      assert {:ok, %Lessons{}} = Courses.delete_lessons(lessons)
+      assert_raise Ecto.NoResultsError, fn -> Courses.get_lessons!(lessons.id) end
+    end
+
+    test "change_lessons/1 returns a lessons changeset" do
+      lessons = lessons_fixture()
+      assert %Ecto.Changeset{} = Courses.change_lessons(lessons)
+    end
+  end
 end

@@ -1,0 +1,42 @@
+<.header>
+  Listing Lesson
+  <:actions>
+    <.link patch={~p"/lesson/new"}>
+      <.button>New Lessons</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table
+  id="lesson"
+  rows={@streams.lesson}
+  row_click={fn {_id, lessons} -> JS.navigate(~p"/lesson/#{lessons}") end}
+>
+  <:col :let={{_id, lessons}} label="Name"><%= lessons.name %></:col>
+  <:col :let={{_id, lessons}} label="Date"><%= lessons.date %></:col>
+  <:action :let={{_id, lessons}}>
+    <div class="sr-only">
+      <.link navigate={~p"/lesson/#{lessons}"}>Show</.link>
+    </div>
+    <.link patch={~p"/lesson/#{lessons}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={{id, lessons}}>
+    <.link
+      phx-click={JS.push("delete", value: %{id: lessons.id}) |> hide("##{id}")}
+      data-confirm="Are you sure?"
+    >
+      Delete
+    </.link>
+  </:action>
+</.table>
+
+<.modal :if={@live_action in [:new, :edit]} id="lessons-modal" show on_cancel={JS.patch(~p"/lesson")}>
+  <.live_component
+    module={EducationalPlatformWeb.LessonsLive.FormComponent}
+    id={@lessons.id || :new}
+    title={@page_title}
+    action={@live_action}
+    lessons={@lessons}
+    patch={~p"/lesson"}
+  />
+</.modal>
