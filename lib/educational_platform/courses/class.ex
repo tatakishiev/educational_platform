@@ -4,8 +4,8 @@ defmodule EducationalPlatform.Courses.Class do
 
   schema "class" do
     field :name, :string
-    field :description, :string
     field :date, :date
+    field :description, :string
 
     timestamps(type: :utc_datetime)
   end

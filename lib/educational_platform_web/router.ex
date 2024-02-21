@@ -18,17 +18,26 @@ defmodule EducationalPlatformWeb.Router do
   end
 
   scope "/", EducationalPlatformWeb do
-    pipe_through :browser
+    pipe_through [:browser, :require_authenticated_user]
 
-    get "/", PageController, :home
-    resources "/class", ClassController
+    # get "/", PageController, :home
+    live "/", ClassLive.Index, :index
 
+    # lessons
     live "/lesson", LessonsLive.Index, :index
     live "/lesson/new", LessonsLive.Index, :new
     live "/lesson/:id/edit", LessonsLive.Index, :edit
 
     live "/lesson/:id", LessonsLive.Show, :show
     live "/lesson/:id/show/edit", LessonsLive.Show, :edit
+
+    # classes
+    live "/class", ClassLive.Index, :index
+    live "/class/new", ClassLive.Index, :new
+    live "/class/:id/edit", ClassLive.Index, :edit
+
+    live "/class/:id", ClassLive.Show, :show
+    live "/class/:id/show/edit", ClassLive.Show, :edit
 
   end
 

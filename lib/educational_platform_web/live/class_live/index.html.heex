@@ -1,0 +1,43 @@
+<.header>
+  Listing Class
+  <:actions>
+    <.link patch={~p"/class/new"}>
+      <.button>New Class</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table
+  id="class"
+  rows={@streams.class_collection}
+  row_click={fn {_id, class} -> JS.navigate(~p"/class/#{class}") end}
+>
+  <:col :let={{_id, class}} label="Name"><%= class.name %></:col>
+  <:col :let={{_id, class}} label="Description"><%= class.description %></:col>
+  <:col :let={{_id, class}} label="Date"><%= class.date %></:col>
+  <:action :let={{_id, class}}>
+    <div class="sr-only">
+      <.link navigate={~p"/class/#{class}"}>Show</.link>
+    </div>
+    <.link patch={~p"/class/#{class}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={{id, class}}>
+    <.link
+      phx-click={JS.push("delete", value: %{id: class.id}) |> hide("##{id}")}
+      data-confirm="Are you sure?"
+    >
+      Delete
+    </.link>
+  </:action>
+</.table>
+
+<.modal :if={@live_action in [:new, :edit]} id="class-modal" show on_cancel={JS.patch(~p"/class")}>
+  <.live_component
+    module={EducationalPlatformWeb.ClassLive.FormComponent}
+    id={@class.id || :new}
+    title={@page_title}
+    action={@live_action}
+    class={@class}
+    patch={~p"/class"}
+  />
+</.modal>
