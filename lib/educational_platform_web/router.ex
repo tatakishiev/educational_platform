@@ -23,13 +23,13 @@ defmodule EducationalPlatformWeb.Router do
     # get "/", PageController, :home
     live "/", ClassLive.Index, :index
 
-    # lessons
-    live "/lesson", LessonsLive.Index, :index
-    live "/lesson/new", LessonsLive.Index, :new
-    live "/lesson/:id/edit", LessonsLive.Index, :edit
+    # lesson
+    live "/lesson", LessonLive.Index, :index
+    live "/lesson/new", LessonLive.Index, :new
+    live "/lesson/:id/edit", LessonLive.Index, :edit
 
-    live "/lesson/:id", LessonsLive.Show, :show
-    live "/lesson/:id/show/edit", LessonsLive.Show, :edit
+    live "/lesson/:id", LessonLive.Show, :show
+    live "/lesson/:id/show/edit", LessonLive.Show, :edit
 
     # classes
     live "/class", ClassLive.Index, :index
@@ -38,7 +38,6 @@ defmodule EducationalPlatformWeb.Router do
 
     live "/class/:id", ClassLive.Show, :show
     live "/class/:id/show/edit", ClassLive.Show, :edit
-
   end
 
   # Other scopes may use custom stacks.

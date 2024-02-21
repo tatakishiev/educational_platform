@@ -1,8 +1,8 @@
-defmodule EducationalPlatformWeb.LessonsLive.Index do
+defmodule EducationalPlatformWeb.LessonLive.Index do
   use EducationalPlatformWeb, :live_view
 
   alias EducationalPlatform.Courses
-  alias EducationalPlatform.Courses.Lessons
+  alias EducationalPlatform.Courses.Lesson
 
   @impl true
   def mount(_params, _session, socket) do
@@ -16,32 +16,32 @@ defmodule EducationalPlatformWeb.LessonsLive.Index do
 
   defp apply_action(socket, :edit, %{"id" => id}) do
     socket
-    |> assign(:page_title, "Edit Lessons")
-    |> assign(:lessons, Courses.get_lessons!(id))
+    |> assign(:page_title, "Edit Lesson")
+    |> assign(:lesson, Courses.get_lesson!(id))
   end
 
   defp apply_action(socket, :new, _params) do
     socket
-    |> assign(:page_title, "New Lessons")
-    |> assign(:lessons, %Lessons{})
+    |> assign(:page_title, "New Lesson")
+    |> assign(:lesson, %Lesson{})
   end
 
   defp apply_action(socket, :index, _params) do
     socket
     |> assign(:page_title, "Listing Lesson")
-    |> assign(:lessons, nil)
+    |> assign(:lesson, nil)
   end
 
   @impl true
-  def handle_info({EducationalPlatformWeb.LessonsLive.FormComponent, {:saved, lessons}}, socket) do
-    {:noreply, stream_insert(socket, :lesson, lessons)}
+  def handle_info({EducationalPlatformWeb.LessonLive.FormComponent, {:saved, lesson}}, socket) do
+    {:noreply, stream_insert(socket, :lesson, lesson)}
   end
 
   @impl true
   def handle_event("delete", %{"id" => id}, socket) do
-    lessons = Courses.get_lessons!(id)
-    {:ok, _} = Courses.delete_lessons(lessons)
+    lesson = Courses.get_lesson!(id)
+    {:ok, _} = Courses.delete_lesson(lesson)
 
-    {:noreply, stream_delete(socket, :lesson, lessons)}
+    {:noreply, stream_delete(socket, :lesson, lesson)}
   end
 end

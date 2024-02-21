@@ -7,6 +7,8 @@ defmodule EducationalPlatform.Courses.Class do
     field :date, :date
     field :description, :string
 
+    many_to_many :lessons, EducationalPlatform.Courses.Lesson, join_through: "classes_lessons"
+
     timestamps(type: :utc_datetime)
   end
 

@@ -35,18 +35,18 @@ defmodule EducationalPlatform.CoursesFixtures do
   end
 
   @doc """
-  Generate a lessons.
+  Generate a lesson.
   """
-  def lessons_fixture(attrs \\ %{}) do
-    {:ok, lessons} =
+  def lesson_fixture(attrs \\ %{}) do
+    {:ok, lesson} =
       attrs
       |> Enum.into(%{
         date: ~D[2024-02-20],
         name: "some name"
       })
-      |> EducationalPlatform.Courses.create_lessons()
+      |> EducationalPlatform.Courses.create_lesson()
 
-    lessons
+    lesson
   end
 
   @doc """

@@ -1,4 +1,4 @@
-defmodule EducationalPlatformWeb.LessonsLive.Show do
+defmodule EducationalPlatformWeb.LessonLive.Show do
   use EducationalPlatformWeb, :live_view
 
   alias EducationalPlatform.Courses
@@ -13,9 +13,9 @@ defmodule EducationalPlatformWeb.LessonsLive.Show do
     {:noreply,
      socket
      |> assign(:page_title, page_title(socket.assigns.live_action))
-     |> assign(:lessons, Courses.get_lessons!(id))}
+     |> assign(:lesson, Courses.get_lesson!(id))}
   end
 
-  defp page_title(:show), do: "Show Lessons"
-  defp page_title(:edit), do: "Edit Lessons"
+  defp page_title(:show), do: "Show Lesson"
+  defp page_title(:edit), do: "Edit Lesson"
 end

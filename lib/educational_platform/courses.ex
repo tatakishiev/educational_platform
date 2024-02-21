@@ -6,7 +6,7 @@ defmodule EducationalPlatform.Courses do
   import Ecto.Query, warn: false
   alias EducationalPlatform.Repo
 
-  alias EducationalPlatform.Courses.Lessons
+  alias EducationalPlatform.Courses.Lesson
 
   @doc """
   Returns the list of lesson.
@@ -14,92 +14,92 @@ defmodule EducationalPlatform.Courses do
   ## Examples
 
       iex> list_lesson()
-      [%Lessons{}, ...]
+      [%Lesson{}, ...]
 
   """
   def list_lesson do
-    Repo.all(Lessons)
+    Repo.all(Lesson)
   end
 
   @doc """
-  Gets a single lessons.
+  Gets a single lesson.
 
-  Raises `Ecto.NoResultsError` if the Lessons does not exist.
+  Raises `Ecto.NoResultsError` if the Lesson does not exist.
 
   ## Examples
 
-      iex> get_lessons!(123)
-      %Lessons{}
+      iex> get_lesson!(123)
+      %Lesson{}
 
-      iex> get_lessons!(456)
+      iex> get_lesson!(456)
       ** (Ecto.NoResultsError)
 
   """
-  def get_lessons!(id), do: Repo.get!(Lessons, id)
+  def get_lesson!(id), do: Repo.get!(Lesson, id)
 
   @doc """
-  Creates a lessons.
+  Creates a lesson.
 
   ## Examples
 
-      iex> create_lessons(%{field: value})
-      {:ok, %Lessons{}}
+      iex> create_lesson(%{field: value})
+      {:ok, %Lesson{}}
 
-      iex> create_lessons(%{field: bad_value})
+      iex> create_lesson(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_lessons(attrs \\ %{}) do
-    %Lessons{}
-    |> Lessons.changeset(attrs)
+  def create_lesson(attrs \\ %{}) do
+    %Lesson{}
+    |> Lesson.changeset(attrs)
     |> Repo.insert()
   end
 
   @doc """
-  Updates a lessons.
+  Updates a lesson.
 
   ## Examples
 
-      iex> update_lessons(lessons, %{field: new_value})
-      {:ok, %Lessons{}}
+      iex> update_lesson(lesson, %{field: new_value})
+      {:ok, %Lesson{}}
 
-      iex> update_lessons(lessons, %{field: bad_value})
+      iex> update_lesson(lesson, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def update_lessons(%Lessons{} = lessons, attrs) do
-    lessons
-    |> Lessons.changeset(attrs)
+  def update_lesson(%Lesson{} = lesson, attrs) do
+    lesson
+    |> Lesson.changeset(attrs)
     |> Repo.update()
   end
 
   @doc """
-  Deletes a lessons.
+  Deletes a lesson.
 
   ## Examples
 
-      iex> delete_lessons(lessons)
-      {:ok, %Lessons{}}
+      iex> delete_lesson(lesson)
+      {:ok, %Lesson{}}
 
-      iex> delete_lessons(lessons)
+      iex> delete_lesson(lesson)
       {:error, %Ecto.Changeset{}}
 
   """
-  def delete_lessons(%Lessons{} = lessons) do
-    Repo.delete(lessons)
+  def delete_lesson(%Lesson{} = lesson) do
+    Repo.delete(lesson)
   end
 
   @doc """
-  Returns an `%Ecto.Changeset{}` for tracking lessons changes.
+  Returns an `%Ecto.Changeset{}` for tracking lesson changes.
 
   ## Examples
 
-      iex> change_lessons(lessons)
-      %Ecto.Changeset{data: %Lessons{}}
+      iex> change_lesson(lesson)
+      %Ecto.Changeset{data: %Lesson{}}
 
   """
-  def change_lessons(%Lessons{} = lessons, attrs \\ %{}) do
-    Lessons.changeset(lessons, attrs)
+  def change_lesson(%Lesson{} = lesson, attrs \\ %{}) do
+    Lesson.changeset(lesson, attrs)
   end
 
   alias EducationalPlatform.Courses.Class

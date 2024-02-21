@@ -116,58 +116,58 @@ defmodule EducationalPlatform.CoursesTest do
   end
 
   describe "lesson" do
-    alias EducationalPlatform.Courses.Lessons
+    alias EducationalPlatform.Courses.lesson
 
     import EducationalPlatform.CoursesFixtures
 
     @invalid_attrs %{name: nil, date: nil}
 
     test "list_lesson/0 returns all lesson" do
-      lessons = lessons_fixture()
-      assert Courses.list_lesson() == [lessons]
+      lesson = lesson_fixture()
+      assert Courses.list_lesson() == [lesson]
     end
 
-    test "get_lessons!/1 returns the lessons with given id" do
-      lessons = lessons_fixture()
-      assert Courses.get_lessons!(lessons.id) == lessons
+    test "get_lesson!/1 returns the lesson with given id" do
+      lesson = lesson_fixture()
+      assert Courses.get_lesson!(lesson.id) == lesson
     end
 
-    test "create_lessons/1 with valid data creates a lessons" do
+    test "create_lesson/1 with valid data creates a lesson" do
       valid_attrs = %{name: "some name", date: ~D[2024-02-20]}
 
-      assert {:ok, %Lessons{} = lessons} = Courses.create_lessons(valid_attrs)
-      assert lessons.name == "some name"
-      assert lessons.date == ~D[2024-02-20]
+      assert {:ok, %lesson{} = lesson} = Courses.create_lesson(valid_attrs)
+      assert lesson.name == "some name"
+      assert lesson.date == ~D[2024-02-20]
     end
 
-    test "create_lessons/1 with invalid data returns error changeset" do
-      assert {:error, %Ecto.Changeset{}} = Courses.create_lessons(@invalid_attrs)
+    test "create_lesson/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Courses.create_lesson(@invalid_attrs)
     end
 
-    test "update_lessons/2 with valid data updates the lessons" do
-      lessons = lessons_fixture()
+    test "update_lesson/2 with valid data updates the lesson" do
+      lesson = lesson_fixture()
       update_attrs = %{name: "some updated name", date: ~D[2024-02-21]}
 
-      assert {:ok, %Lessons{} = lessons} = Courses.update_lessons(lessons, update_attrs)
-      assert lessons.name == "some updated name"
-      assert lessons.date == ~D[2024-02-21]
+      assert {:ok, %lesson{} = lesson} = Courses.update_lesson(lesson, update_attrs)
+      assert lesson.name == "some updated name"
+      assert lesson.date == ~D[2024-02-21]
     end
 
-    test "update_lessons/2 with invalid data returns error changeset" do
-      lessons = lessons_fixture()
-      assert {:error, %Ecto.Changeset{}} = Courses.update_lessons(lessons, @invalid_attrs)
-      assert lessons == Courses.get_lessons!(lessons.id)
+    test "update_lesson/2 with invalid data returns error changeset" do
+      lesson = lesson_fixture()
+      assert {:error, %Ecto.Changeset{}} = Courses.update_lesson(lesson, @invalid_attrs)
+      assert lesson == Courses.get_lesson!(lesson.id)
     end
 
-    test "delete_lessons/1 deletes the lessons" do
-      lessons = lessons_fixture()
-      assert {:ok, %Lessons{}} = Courses.delete_lessons(lessons)
-      assert_raise Ecto.NoResultsError, fn -> Courses.get_lessons!(lessons.id) end
+    test "delete_lesson/1 deletes the lesson" do
+      lesson = lesson_fixture()
+      assert {:ok, %lesson{}} = Courses.delete_lesson(lesson)
+      assert_raise Ecto.NoResultsError, fn -> Courses.get_lesson!(lesson.id) end
     end
 
-    test "change_lessons/1 returns a lessons changeset" do
-      lessons = lessons_fixture()
-      assert %Ecto.Changeset{} = Courses.change_lessons(lessons)
+    test "change_lesson/1 returns a lesson changeset" do
+      lesson = lesson_fixture()
+      assert %Ecto.Changeset{} = Courses.change_lesson(lesson)
     end
   end
 

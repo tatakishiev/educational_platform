@@ -1,4 +1,4 @@
-defmodule EducationalPlatformWeb.LessonsLive.FormComponent do
+defmodule EducationalPlatformWeb.LessonLive.FormComponent do
   use EducationalPlatformWeb, :live_component
 
   alias EducationalPlatform.Courses
@@ -9,12 +9,12 @@ defmodule EducationalPlatformWeb.LessonsLive.FormComponent do
     <div>
       <.header>
         <%= @title %>
-        <%!-- <:subtitle>Use this form to manage lessons records in your database.</:subtitle> --%>
+        <%!-- <:subtitle>Use this form to manage lesson records in your database.</:subtitle> --%>
       </.header>
 
       <.simple_form
         for={@form}
-        id="lessons-form"
+        id="lesson-form"
         phx-target={@myself}
         phx-change="validate"
         phx-submit="save"
@@ -22,7 +22,7 @@ defmodule EducationalPlatformWeb.LessonsLive.FormComponent do
         <.input field={@form[:name]} type="text" label="Name" />
         <.input field={@form[:date]} type="date" label="Date" />
         <:actions>
-          <.button phx-disable-with="Saving...">Save Lessons</.button>
+          <.button phx-disable-with="Saving...">Save Lesson</.button>
         </:actions>
       </.simple_form>
     </div>
@@ -30,8 +30,8 @@ defmodule EducationalPlatformWeb.LessonsLive.FormComponent do
   end
 
   @impl true
-  def update(%{lessons: lessons} = assigns, socket) do
-    changeset = Courses.change_lessons(lessons)
+  def update(%{lesson: lesson} = assigns, socket) do
+    changeset = Courses.change_lesson(lesson)
 
     {:ok,
      socket
@@ -40,27 +40,27 @@ defmodule EducationalPlatformWeb.LessonsLive.FormComponent do
   end
 
   @impl true
-  def handle_event("validate", %{"lessons" => lessons_params}, socket) do
+  def handle_event("validate", %{"lesson" => lesson_params}, socket) do
     changeset =
-      socket.assigns.lessons
-      |> Courses.change_lessons(lessons_params)
+      socket.assigns.lesson
+      |> Courses.change_lesson(lesson_params)
       |> Map.put(:action, :validate)
 
     {:noreply, assign_form(socket, changeset)}
   end
 
-  def handle_event("save", %{"lessons" => lessons_params}, socket) do
-    save_lessons(socket, socket.assigns.action, lessons_params)
+  def handle_event("save", %{"lesson" => lesson_params}, socket) do
+    save_lesson(socket, socket.assigns.action, lesson_params)
   end
 
-  defp save_lessons(socket, :edit, lessons_params) do
-    case Courses.update_lessons(socket.assigns.lessons, lessons_params) do
-      {:ok, lessons} ->
-        notify_parent({:saved, lessons})
+  defp save_lesson(socket, :edit, lesson_params) do
+    case Courses.update_lesson(socket.assigns.lesson, lesson_params) do
+      {:ok, lesson} ->
+        notify_parent({:saved, lesson})
 
         {:noreply,
          socket
-         |> put_flash(:info, "Lessons updated successfully")
+         |> put_flash(:info, "Lesson updated successfully")
          |> push_patch(to: socket.assigns.patch)}
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -68,14 +68,14 @@ defmodule EducationalPlatformWeb.LessonsLive.FormComponent do
     end
   end
 
-  defp save_lessons(socket, :new, lessons_params) do
-    case Courses.create_lessons(lessons_params) do
-      {:ok, lessons} ->
-        notify_parent({:saved, lessons})
+  defp save_lesson(socket, :new, lesson_params) do
+    case Courses.create_lesson(lesson_params) do
+      {:ok, lesson} ->
+        notify_parent({:saved, lesson})
 
         {:noreply,
          socket
-         |> put_flash(:info, "Lessons created successfully")
+         |> put_flash(:info, "Lesson created successfully")
          |> push_patch(to: socket.assigns.patch)}
 
       {:error, %Ecto.Changeset{} = changeset} ->
