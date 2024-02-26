@@ -2,11 +2,13 @@ defmodule EducationalPlatform.Courses.Lesson do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias EducationalPlatform.Courses.ClassesLessons
+
   schema "lesson" do
     field :name, :string
     field :date, :date
 
-    many_to_many :classes, EducationalPlatform.Courses.Class, join_through: "classes_lessons"
+    many_to_many :classes, ClassesLessons, join_through: "classes_lessons"
 
     timestamps(type: :utc_datetime)
   end

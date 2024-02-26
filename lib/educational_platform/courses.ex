@@ -113,8 +113,9 @@ defmodule EducationalPlatform.Courses do
       [%Class{}, ...]
 
   """
-  def list_class do
+  def list_class() do
     Repo.all(Class)
+    |> Repo.preload(:lessons)
   end
 
   @doc """
@@ -182,6 +183,12 @@ defmodule EducationalPlatform.Courses do
 
   """
   def delete_class(%Class{} = class) do
+    Repo.delete_all(
+      from r in "classes_lessons",
+        where: r.class_id == ^class.id,
+        select: [r.id, r.class_id, r.lesson_id]
+    )
+
     Repo.delete(class)
   end
 

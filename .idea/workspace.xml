@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="af5ca456-1c22-4dc8-8b66-5c678e69448b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/bandit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/bcrypt_elixir.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/benchee.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/benchee_html.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/bypass.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/castore.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/certifi.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/circular_buffer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/comeonin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/cowboy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/credo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/dart_sass.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/db_connection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/decimal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/dialyxir.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/dns_cluster.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/earmark.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ecto.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ecto_mysql_extras.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ecto_psql_extras.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ecto_sql.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ecto_sqlite3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ecto_sqlite3_extras.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/elixir_make.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/esbuild.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ex_aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ex_doc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/excoveralls.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/expo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/fast_html.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/file_system.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/finch.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/floki.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gen_smtp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gettext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/hackney.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/heroicons.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/hpack.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/hpax.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/html5ever.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/html_entities.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jason.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/machete.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mail.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/makeup_diff.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/makeup_eex.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/makeup_elixir.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mint.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mint_web_socket.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mix_test_watch.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mox.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/myxql.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/nimble_options.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/nimble_pool.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_ecto.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_html.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_live_dashboard.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_live_reload.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_live_view.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_pubsub.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_view.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/phx_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/plug.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/plug_cowboy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/plug_crypto.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/postgrex.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/req.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/stream_data.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/swoosh.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/table.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/tailwind.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/tds.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/telemetry.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/telemetry_metrics.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/telemetry_poller.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/thousand_island.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/websock.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/websock_adapter.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/x509.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/educational_platform.iml" beforeDir="false" afterPath="$PROJECT_DIR$/educational_platform.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform/accounts/user.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/educational_platform/accounts/user.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform/courses.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/educational_platform/courses.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform/courses/class.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/educational_platform/courses/class.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform/courses/lesson.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/educational_platform/courses/lesson.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform_web/controllers/page_html/home.html.heex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/educational_platform_web/controllers/page_html/home.html.heex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform_web/live/class_live/form_component.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/educational_platform_web/live/class_live/form_component.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform_web/live/class_live/index.html.heex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/educational_platform_web/live/class_live/index.html.heex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform_web/live/class_live/show.html.heex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/educational_platform_web/live/class_live/show.html.heex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform_web/live/user_confirmation_instructions_live.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform_web/live/user_confirmation_live.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform_web/live/user_forgot_password_live.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform_web/live/user_login_live.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform_web/live/user_registration_live.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform_web/live/user_reset_password_live.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform_web/live/user_settings_live.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/educational_platform_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/educational_platform_web/router.ex" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2cgXVeiMFKWDEBZyFbU3Coyf11l" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/timuratakishiev/Repos/elixir/phoenix/educational_platform&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.21452992&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="educational_platform" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="educational_platform" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af5ca456-1c22-4dc8-8b66-5c678e69448b" name="Changes" comment="" />
+      <created>1708534221205</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708534221205</updated>
+      <workItem from="1708534222542" duration="1788000" />
+      <workItem from="1708834544134" duration="81000" />
+      <workItem from="1708834659440" duration="262000" />
+      <workItem from="1708835165627" duration="65000" />
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+</project>

@@ -350,4 +350,14 @@ defmodule EducationalPlatform.Accounts do
       {:error, :user, changeset, _} -> {:error, changeset}
     end
   end
+
+  def all_users_except(user_id) do
+    query = from u in "users", where: u.id != ^user_id
+    Repo.all(query)
+  end
+
+  def all_users() do
+    Repo.all(User)
+    |> Repo.preload(:classes)
+  end
 end
