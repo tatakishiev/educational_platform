@@ -115,7 +115,7 @@ defmodule EducationalPlatform.Courses do
   """
   def list_class() do
     Repo.all(Class)
-    |> Repo.preload(:lessons)
+    |> Repo.preload([:lessons, :user])
   end
 
   @doc """
@@ -149,6 +149,7 @@ defmodule EducationalPlatform.Courses do
   def create_class(attrs \\ %{}) do
     %Class{}
     |> Class.changeset(attrs)
+    |> IO.inspect()
     |> Repo.insert()
   end
 

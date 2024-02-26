@@ -1,12 +1,11 @@
 defmodule EducationalPlatformWeb.ClassLive.Index do
-  alias EducationalPlatform.Accounts
   use EducationalPlatformWeb, :live_view
 
   alias EducationalPlatform.Courses
-  alias EducationalPlatform.Courses.Class
 
   @impl true
-  def mount(_params, session, socket) do
+  def mount(_params, _session, socket) do
+    IO.inspect(Courses.list_class())
     {:ok, stream(socket, :class_collection, Courses.list_class())}
   end
 

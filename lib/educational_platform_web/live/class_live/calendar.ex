@@ -63,10 +63,6 @@ defmodule EducationalPlatformWeb.CalendarComponent do
     {:ok, assign(socket, assigns)}
   end
 
-  defp apply_action(socket, :new, _params) do
-    {:ok, socket}
-  end
-
   defp week_rows(current_date) do
     first =
       current_date

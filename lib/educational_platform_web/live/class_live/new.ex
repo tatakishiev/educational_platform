@@ -8,15 +8,17 @@ defmodule EducationalPlatformWeb.ClassLive.NewClass do
     ~H"""
     <h1 class="grow text-2xl font-bold">Create New Class</h1>
     <.form class="mb-6" for={@form} phx-submit="submit">
-      <.input field={@form[:name]} type="text" label="Name" />
-      <.input field={@form[:description]} type="text" label="Description" />
-      <.input field={@form[:date]} type="date" label="Date" />
-      <.input field={@form[:user_id]} type="text" label="User" />
-      <button class="bg-black border border-black hover:bg-gray-700 text-white font-hold py-2 px-3 rounded-md">
-        Save
-      </button>
-      <div :for={user <- @users}>
-        <%= user %>
+      <div>
+        <.input field={@form[:name]} type="text" label="Name" />
+        <.input field={@form[:description]} type="text" label="Description" />
+        <.input field={@form[:date]} type="date" label="Date" />
+        <.input field={@form[:user_id]} type="select" options={@users} label="User" />
+        <.input field={@form[:lesson_id]} type="select" options={@lessons} label="Lessons" />
+      </div>
+      <div style="padding-top:20px">
+        <button class="bg-black border border-black hover:bg-gray-700 text-white font-hold py-2 px-3 rounded-md">
+          Save
+        </button>
       </div>
     </.form>
     """
@@ -24,24 +26,23 @@ defmodule EducationalPlatformWeb.ClassLive.NewClass do
 
   @impl true
   def mount(_params, _session, socket) do
-    # current_user =
-
     changeset = Courses.Class.changeset(%Courses.Class{})
-    users = Enum.map(Accounts.all_users(), fn x -> x.email end)
-    IO.inspect(users)
+    users = Enum.map(Accounts.all_users(), &{&1.email, &1.id})
+    lessons = Enum.map(Courses.list_lesson(), fn l -> l.name end)
 
     socket =
       socket
       |> assign(:form, to_form(changeset))
       |> assign(:users, users)
-
-    # |> assign(:lessons, lessons)
+      |> assign(:lessons, lessons)
 
     {:ok, socket}
   end
 
   @impl true
   def handle_event("submit", %{"class" => class_params}, socket) do
+    IO.inspect(class_params)
+
     case Courses.create_class(class_params) do
       {:ok, _class} ->
         socket =
