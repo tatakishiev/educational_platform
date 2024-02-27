@@ -18,7 +18,7 @@ defmodule EducationalPlatform.Courses.Class do
   @doc false
   def changeset(class, attrs \\ %{}) do
     class
-    |> cast(attrs, [:name, :description, :date, :user_id])
+    |> cast(attrs, [:name, :description, :date, :user_id, :lessons_ids])
     |> validate_required([:name, :description, :date, :user_id])
   end
 end

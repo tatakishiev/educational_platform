@@ -32,4 +32,12 @@ defmodule EducationalPlatformWeb.ClassLive.Index do
 
     {:noreply, stream_delete(socket, :class_collection, class)}
   end
+
+  defp user_email(user) do
+    if user == nil do
+      ""
+    else
+      user.email
+    end
+  end
 end

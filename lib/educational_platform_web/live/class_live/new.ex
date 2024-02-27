@@ -13,7 +13,7 @@ defmodule EducationalPlatformWeb.ClassLive.NewClass do
         <.input field={@form[:description]} type="text" label="Description" />
         <.input field={@form[:date]} type="date" label="Date" />
         <.input field={@form[:user_id]} type="select" options={@users} label="User" />
-        <.input field={@form[:lesson_id]} type="select" options={@lessons} label="Lessons" />
+        <.input field={@form[:lessons_ids]} type="select" options={@all_lessons} label="Lessons" />
       </div>
       <div style="padding-top:20px">
         <button class="bg-black border border-black hover:bg-gray-700 text-white font-hold py-2 px-3 rounded-md">
@@ -28,21 +28,19 @@ defmodule EducationalPlatformWeb.ClassLive.NewClass do
   def mount(_params, _session, socket) do
     changeset = Courses.Class.changeset(%Courses.Class{})
     users = Enum.map(Accounts.all_users(), &{&1.email, &1.id})
-    lessons = Enum.map(Courses.list_lesson(), fn l -> l.name end)
+    all_lessons = Enum.map(Courses.list_lesson(), &{&1.name, &1.id})
 
     socket =
       socket
       |> assign(:form, to_form(changeset))
       |> assign(:users, users)
-      |> assign(:lessons, lessons)
+      |> assign(:all_lessons, all_lessons)
 
     {:ok, socket}
   end
 
   @impl true
   def handle_event("submit", %{"class" => class_params}, socket) do
-    IO.inspect(class_params)
-
     case Courses.create_class(class_params) do
       {:ok, _class} ->
         socket =

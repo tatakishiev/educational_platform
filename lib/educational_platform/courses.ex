@@ -132,7 +132,10 @@ defmodule EducationalPlatform.Courses do
       ** (Ecto.NoResultsError)
 
   """
-  def get_class!(id), do: Repo.get!(Class, id)
+  def get_class!(id) do
+    Repo.get(Class, id)
+    |> Repo.preload([:lessons, :user])
+  end
 
   @doc """
   Creates a class.
@@ -149,7 +152,6 @@ defmodule EducationalPlatform.Courses do
   def create_class(attrs \\ %{}) do
     %Class{}
     |> Class.changeset(attrs)
-    |> IO.inspect()
     |> Repo.insert()
   end
 
