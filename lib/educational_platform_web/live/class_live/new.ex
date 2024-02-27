@@ -13,7 +13,7 @@ defmodule EducationalPlatformWeb.ClassLive.NewClass do
         <.input field={@form[:description]} type="text" label="Description" />
         <.input field={@form[:date]} type="date" label="Date" />
         <.input field={@form[:user_id]} type="select" options={@users} label="User" />
-        <.input field={@form[:lessons_ids]} type="select" options={@all_lessons} label="Lessons" />
+        <.input field={@form[:lesson_id]} type="select" options={@all_lessons} label="Lessons" />
       </div>
       <div style="padding-top:20px">
         <button class="bg-black border border-black hover:bg-gray-700 text-white font-hold py-2 px-3 rounded-md">

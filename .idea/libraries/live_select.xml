@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="live_select" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/live_select/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/live_select/ebin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/live_select/lib" />
+      <root url="file://$PROJECT_DIR$/deps/live_select/priv" />
+      <root url="file://$PROJECT_DIR$/deps/live_select/lib" />
+      <root url="file://$PROJECT_DIR$/deps/live_select/priv" />
+    </SOURCES>
+  </library>
+</component>

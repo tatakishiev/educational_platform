@@ -9,9 +9,8 @@ defmodule EducationalPlatform.Courses.ClassesLessons do
     belongs_to :lesson, Lesson
   end
 
-  def changeset(class_lesson, attrs) do
-    class_lesson
-    |> cast(attrs, [:class_id, :lesson_id])
-  end
-
+  # def changeset(class_lesson, attrs \\ {}) do
+  #   class_lesson
+  #   |> cast(attrs, [:class_id, :lesson_id])
+  # end
 end

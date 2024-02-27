@@ -4,6 +4,7 @@ defmodule EducationalPlatform.Courses do
   """
 
   import Ecto.Query, warn: false
+  alias EducationalPlatform.Courses.ClassesLessons
   alias EducationalPlatform.Repo
 
   alias EducationalPlatform.Courses.Lesson
@@ -150,9 +151,20 @@ defmodule EducationalPlatform.Courses do
 
   """
   def create_class(attrs \\ %{}) do
-    %Class{}
-    |> Class.changeset(attrs)
-    |> Repo.insert()
+    lesson = attrs["lesson_id"]
+
+    class =
+      %Class{}
+      |> Class.changeset(attrs)
+      |> Repo.insert()
+
+    case class do
+      {:ok, result} ->
+        %ClassesLessons{class: result, lesson: get_lesson!(lesson)}
+        |> Repo.insert()
+    end
+
+    # IO.inspect(lesson)
   end
 
   @doc """

@@ -13,13 +13,10 @@
   <:item title="Description"><%= @class.description %></:item>
   <:item title="Date"><%= @class.date %></:item>
   <:item title="User"><%= @class.user.email %></:item>
+  <:item title="Lessons">
+    <span :for={lesson <- @class.lessons}><%= lesson.name %></span>
+  </:item>
 </.list>
-
-<div>
-  <%= for lesson <- @class.lessons do %>
-    <p><%= lesson.name %></p>
-  <% end %>
-</div>
 
 <.back navigate={~p"/class"}>Back to class</.back>
 
