@@ -1,6 +1,5 @@
 defmodule EducationalPlatform.Courses.ClassesLessons do
   use Ecto.Schema
-  import Ecto.Changeset
 
   alias EducationalPlatform.Courses.{Class, Lesson}
 
